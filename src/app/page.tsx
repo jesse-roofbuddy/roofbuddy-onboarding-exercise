@@ -37,14 +37,17 @@ export default function Home() {
         <input
           type="text"
           placeholder="Search menu items..."
-          className="w-full p-2 border rounded-lg"
+          className="w-full p-2 border rounded-lg focus:outline-solid focus:outline-blue-500"
           onChange={(e) => setSearchTerm(e.target.value)}
         />
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredItems.map((item: any) => (
-          <div key={item.id} className="border rounded-lg p-4 shadow-sm">
+          <div
+            key={item.id}
+            className="border rounded-lg p-4 shadow-sm hover:shadow-md"
+          >
             <h2 className="text-xl font-semibold mb-2">{item.name}</h2>
             <p className="text-gray-600 mb-2">{item.description}</p>
             <div className="flex justify-between items-center">
