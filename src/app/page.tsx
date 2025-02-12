@@ -22,6 +22,7 @@ export default function Home() {
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
+  if (!data) return <p>No data available</p>;
 
   const filteredItems = data.menuItems.filter(
     (item: MenuItem) =>
