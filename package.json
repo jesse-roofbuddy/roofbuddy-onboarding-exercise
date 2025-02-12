@@ -3,11 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
     "build": "next build",
-    "start": "next start",
+    "dev": "next dev --turbopack",
     "lint": "next lint",
-    "seed": "tsx prisma/seed.ts"
+    "postinstall": "prisma generate",
+    "seed": "tsx prisma/seed.ts",
+    "start": "next start"
   },
   "dependencies": {
     "@apollo/client": "^3.12.11",
