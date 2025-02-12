@@ -54,7 +54,7 @@ export default function Home() {
             <p className="text-gray-600 mb-2">{item.description}</p>
             <div className="flex justify-between items-center">
               <span className="text-sm text-gray-500">{item.country}</span>
-              <span className="font-bold">${item.price}</span>
+              <span className="font-bold">${item.price.toFixed(2)}</span>
             </div>
           </div>
         ))}
