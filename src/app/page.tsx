@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { gql, useQuery } from "@apollo/client";
+import { MenuItem, MenuItemsData } from "@/types/menu";
 
 const GET_MENU_ITEMS = gql`
   query GetMenuItems {
@@ -17,13 +18,13 @@ const GET_MENU_ITEMS = gql`
 
 export default function Home() {
   const [searchTerm, setSearchTerm] = useState("");
-  const { loading, error, data } = useQuery(GET_MENU_ITEMS);
+  const { loading, error, data } = useQuery<MenuItemsData>(GET_MENU_ITEMS);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
 
   const filteredItems = data.menuItems.filter(
-    (item: any) =>
+    (item: MenuItem) =>
       item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       item.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
       item.country.toLowerCase().includes(searchTerm.toLowerCase())
@@ -43,7 +44,7 @@ export default function Home() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filteredItems.map((item: any) => (
+        {filteredItems.map((item: MenuItem) => (
           <div
             key={item.id}
             className="border rounded-lg p-4 shadow-sm hover:shadow-md"
