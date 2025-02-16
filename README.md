@@ -62,10 +62,10 @@ Check out the [live page](https://roofbuddy-onboarding-exercise-b7uf.vercel.app/
 You can start editing the page by modifying app/page.tsx. The page auto-updates as you edit the file.
 This project uses:
 
-next/font to automatically optimize and load Geist
-Apollo Client for GraphQL operations
-Prisma as the ORM
-TailwindCSS for styling
+- next/font to automatically optimize and load Geist
+- Apollo Client for GraphQL operations
+- Prisma as the ORM
+- TailwindCSS for styling
 
 ## Learn More
 
